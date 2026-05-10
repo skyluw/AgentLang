@@ -1,5 +1,6 @@
 grammar AgentLang;
 
+// ── PARSER RULES ──────────────────────────
 programa   : agente+ EOF ;
 
 agente     : 'agente' ID '{' cuerpo '}' ;
@@ -8,17 +9,34 @@ cuerpo     : estadoDecl? percepcion* regla* ;
 
 estadoDecl : 'estado' ':' ID ';' ;
 
-percepcion : 'percibe' ID ';' ;
+percepcion : 'percibe' tipo ID ';' ;
 
-regla      : 'si' expr 'entonces' accion ';'
-           | 'si' expr 'entonces' accion 'sino' accion ';'
+regla      : 'si' condicion 'entonces' '{' accion+ '}'
+           | 'si' condicion 'entonces' '{' accion+ '}' 'sino' '{' accion+ '}'
            ;
 
-accion     : ID '(' ID? ')' ;
+condicion  : expr (('y' | 'o') expr)* ;
 
-expr       : ID OP NUMBER ;
+expr       : ID OP valor
+           | ID
+           | 'no' ID
+           ;
 
-ID         : [a-zA-Z][a-zA-Z0-9_]* ;
-NUMBER     : [0-9]+ ('.' [0-9]+)? ;
-OP         : '>' | '<' | '>=' | '<=' | '==' ;
-WS         : [ \t\r\n]+ -> skip ;
+accion     : 'accion' ID '(' args? ')' ';'
+           | 'enviar' '(' STRING ',' ID ')' ';'
+           ;
+
+args       : valor (',' valor)* ;
+
+valor      : NUMBER | STRING | ID | BOOL ;
+
+tipo       : 'numero' | 'texto' | 'booleano' ;
+
+// ── LEXER RULES ───────────────────────────
+BOOL      : 'verdadero' | 'falso' ;
+STRING    : '"' (~["\r\n])* '"' ;
+ID        : [a-zA-Z][a-zA-Z0-9_]* ;
+NUMBER    : '-'? [0-9]+ ('.' [0-9]+)? ;
+OP        : '>' | '<' | '>=' | '<=' | '==' | '!=' ;
+WS        : [ \t\r\n]+ -> skip ;
+COMMENT   : '//' ~[\r\n]* -> skip ;

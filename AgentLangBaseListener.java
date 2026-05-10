@@ -88,13 +88,13 @@ public class AgentLangBaseListener implements AgentLangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAccion(AgentLangParser.AccionContext ctx) { }
+	@Override public void enterCondicion(AgentLangParser.CondicionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAccion(AgentLangParser.AccionContext ctx) { }
+	@Override public void exitCondicion(AgentLangParser.CondicionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -107,6 +107,54 @@ public class AgentLangBaseListener implements AgentLangListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpr(AgentLangParser.ExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAccion(AgentLangParser.AccionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAccion(AgentLangParser.AccionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArgs(AgentLangParser.ArgsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArgs(AgentLangParser.ArgsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterValor(AgentLangParser.ValorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitValor(AgentLangParser.ValorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTipo(AgentLangParser.TipoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTipo(AgentLangParser.TipoContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

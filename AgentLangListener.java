@@ -67,15 +67,15 @@ public interface AgentLangListener extends ParseTreeListener {
 	 */
 	void exitRegla(AgentLangParser.ReglaContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link AgentLangParser#accion}.
+	 * Enter a parse tree produced by {@link AgentLangParser#condicion}.
 	 * @param ctx the parse tree
 	 */
-	void enterAccion(AgentLangParser.AccionContext ctx);
+	void enterCondicion(AgentLangParser.CondicionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link AgentLangParser#accion}.
+	 * Exit a parse tree produced by {@link AgentLangParser#condicion}.
 	 * @param ctx the parse tree
 	 */
-	void exitAccion(AgentLangParser.AccionContext ctx);
+	void exitCondicion(AgentLangParser.CondicionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link AgentLangParser#expr}.
 	 * @param ctx the parse tree
@@ -86,4 +86,44 @@ public interface AgentLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExpr(AgentLangParser.ExprContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AgentLangParser#accion}.
+	 * @param ctx the parse tree
+	 */
+	void enterAccion(AgentLangParser.AccionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AgentLangParser#accion}.
+	 * @param ctx the parse tree
+	 */
+	void exitAccion(AgentLangParser.AccionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AgentLangParser#args}.
+	 * @param ctx the parse tree
+	 */
+	void enterArgs(AgentLangParser.ArgsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AgentLangParser#args}.
+	 * @param ctx the parse tree
+	 */
+	void exitArgs(AgentLangParser.ArgsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AgentLangParser#valor}.
+	 * @param ctx the parse tree
+	 */
+	void enterValor(AgentLangParser.ValorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AgentLangParser#valor}.
+	 * @param ctx the parse tree
+	 */
+	void exitValor(AgentLangParser.ValorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link AgentLangParser#tipo}.
+	 * @param ctx the parse tree
+	 */
+	void enterTipo(AgentLangParser.TipoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link AgentLangParser#tipo}.
+	 * @param ctx the parse tree
+	 */
+	void exitTipo(AgentLangParser.TipoContext ctx);
 }

@@ -1,7 +1,17 @@
-agente Bodeguero {
-  estado: abierto;
-  percibe stock;
-  percibe hora;
-  si stock > 10 entonces activar(proveedor);
-  si hora > 22 entonces cerrar(tienda);
+// Agente que controla un semáforo inteligente
+agente Semaforo {
+  estado: rojo;
+  percibe numero autos;
+  percibe booleano emergencia;
+
+  si autos > 20 y emergencia == falso entonces {
+    accion cambiar("verde");
+    accion notificar("trafico_alto");
+  }
+  si emergencia == verdadero entonces {
+    accion cambiar("rojo");
+    enviar("alerta", CentralControl);
+  } sino {
+    accion esperar();
+  }
 }
