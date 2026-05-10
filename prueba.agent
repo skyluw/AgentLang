@@ -1,0 +1,7 @@
+agente Bodeguero {
+  estado: abierto;
+  percibe stock;
+  percibe hora;
+  si stock > 10 entonces activar(proveedor);
+  si hora > 22 entonces cerrar(tienda);
+}
