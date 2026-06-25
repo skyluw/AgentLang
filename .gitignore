@@ -1,0 +1,19 @@
+# Bytecode compilado de Java (nunca debe versionarse)
+*.class
+
+# Archivos auxiliares generados por ANTLR (se regeneran desde AgentLang.g4)
+*.interp
+*.tokens
+
+# IDE / sistema operativo
+.idea/
+.vscode/
+.DS_Store
+
+# --- Opcional ---
+# Si prefieres un repo "solo gramática" y regenerar el parser con ANTLR,
+# descomenta estas líneas para no versionar el lexer/parser generados:
+# AgentLangLexer.java
+# AgentLangParser.java
+# AgentLangListener.java
+# AgentLangBaseListener.java
